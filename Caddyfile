@@ -1,0 +1,11 @@
+airflow.calebfahlgren.com {
+    reverse_proxy airflow-webserver:8080 {
+        header_down Strict-Transport-Security max-age=31536000;
+    }
+}
+
+flower.calebfahlgren.com {
+    reverse_proxy flower:5555 {
+        header_down Strict-Transport-Security max-age=31536000;
+    }
+}

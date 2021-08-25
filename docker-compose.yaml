@@ -24,6 +24,18 @@ x-airflow-common: &airflow-common
       condition: service_healthy
 
 services:
+  caddy:
+    image: caddy/caddy:2.2.1-alpine
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
   postgres:
     image: postgres:13
     environment:
@@ -40,6 +52,7 @@ services:
 
   redis:
     image: redis:latest
+
     ports:
       - 6379:6379
     healthcheck:
@@ -51,6 +64,7 @@ services:
 
   airflow-webserver:
     <<: *airflow-common
+    container_name: airflow-webserver
     command: webserver
     ports:
       - 8080:8080
@@ -99,6 +113,7 @@ services:
 
   flower:
     <<: *airflow-common
+    container_name: flower
     command: celery flower
     ports:
       - 5555:5555
@@ -111,3 +126,6 @@ services:
 
 volumes:
   postgres-db-volume:
+  caddy_config:
+  caddy_data: {}
+
