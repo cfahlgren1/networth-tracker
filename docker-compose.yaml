@@ -39,6 +39,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - $PWD/Caddyfile:/etc/caddy/Caddyfile
+      - ./public:/var/www/html
       - caddy_data:/data
       - caddy_config:/config
 

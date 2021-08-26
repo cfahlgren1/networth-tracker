@@ -1,3 +1,12 @@
+calebfahlgren.com {
+    respond "Hello, World!"
+}
+
+resume.calebfahlgren.com {
+    root * /var/www/html
+    file_server
+}
+
 airflow.calebfahlgren.com {
     reverse_proxy airflow-webserver:8080 {
         header_down Strict-Transport-Security max-age=31536000;
