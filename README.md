@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/LunchMoney-Integration-yellow?style=for-the-badge)
 
 Track your net worth every day from all of your crypto assets. 
-This services automatically integrates with LunchMoney, a budgeting and finance tool.
+This services automatically integrates with LunchMoney, a budgeting and finance tool. You will receive daily text messages of your net worth so you can track your assets from a birds eye view!
 
 <img src="https://user-images.githubusercontent.com/13546028/130805020-1c6a0df7-b336-496a-955e-a50eda6ad4a9.png" width="350">
 
