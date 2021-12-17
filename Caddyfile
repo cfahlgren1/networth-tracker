@@ -24,9 +24,3 @@ docker.calebfahlgren.com {
         header_down Strict-Transport-Security max-age=31536000;
     }
 }
-
-rsb.calebfahlgren.com {
-    reverse_proxy rsb:8000 {
-        header_down Strict-Transport-Security max-age=31536000;
-    }
-}

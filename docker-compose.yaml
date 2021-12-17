@@ -123,15 +123,7 @@ services:
       timeout: 10s
       retries: 5
     restart: always
-
-  rsb:
-    container_name: rsb
-    build:
-      context: rsb
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-
+    
 volumes:
   postgres-db-volume:
   caddy_config:
